@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1>Faire une recommandation pour {{ user.name }}</h1>
+
+        {{ form(form) }}
+    </div>
+{% endblock %}

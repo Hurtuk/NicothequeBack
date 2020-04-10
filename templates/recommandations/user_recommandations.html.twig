@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="container-fluid">
+        <h1>Recommandations</h1>
+        <h2>Les recommandations de {{ user.name }}</h2>
+        <a href="{{ path('app_recommandations_new_user', {'userId' : user.id}) }}" class="btn btn-outline-dark float-right mb-3">Recommander un film</a>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr class="table-dark">
+                    <th>Film</th>
+                    <th>Etat</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for recommandation in recommandations %}
+                <tr>
+                    <td>{{ recommandation.movie.title }}</td>
+                    <td>{{ recommandation.state }}</td>
+                    <td><a href="{{ path('app_recommandation_update', {'id' : recommandation.id}) }}" class="btn btn-dark btn-sm">Modifier</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

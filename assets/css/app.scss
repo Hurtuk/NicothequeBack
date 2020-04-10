@@ -1,0 +1,17 @@
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+@import "bootswatch";
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+@import "~datatables.net-dt/css/jquery.dataTables.css";
+
+nav {
+  margin-bottom: 15px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}

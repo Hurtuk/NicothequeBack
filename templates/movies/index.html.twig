@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="container-fluid">
+        <h1>Films</h1>
+        <a href="{{ path('app_movies_new') }}" class="btn btn-outline-dark float-right mb-3">Ajouter un film</a>
+        <table id="movies-table" class="table table-bordered table-hover table-striped">
+            <thead>
+            <tr class="table-primary">
+                <th>Titre</th>
+                <th>Titre FR</th>
+                <th>Année</th>
+                <th>Catégories</th>
+                <th>Metteurs en scène</th>
+                <th>Acteur</th>
+                <th>Note</th>
+                <th>Durée</th>
+                <th>Possédé</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for movie in movies %}
+                <tr>
+                    <td>{{ movie.title }}</td>
+                    <td>{{ movie.titleFr }}</td>
+                    <td>{{ movie.year }}</td>
+                    <td>{{ movie.categories }}</td>
+                    <td>{{ movie.directors }}</td>
+                    <td>{{ movie.actors }}</td>
+                    <td>{{ movie.mark }}</td>
+                    <td>{{ movie.length }}</td>
+                    <td>{{ movie.owned ? 'Oui' : 'Non'}}</td>
+                    <td><a href="{{ path('app_movies_details', {'id' : movie.id}) }}" class="btn btn-dark btn-sm">Détails</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

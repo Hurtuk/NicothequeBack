@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="container-fluid">
+        <h1>Dashboard Nicotheque</h1>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-header">Films <i class="fa fa-film"></i></div>
+                    <div class="card-body">
+                        <h4 class="card-title">Un nouveau film dans la Nicothèque ?</h4>
+                        <p class="card-text">Ajouter sans plus tarder une nouvelle oeuvre qui viendra compléter la collection.</p>
+                        <p><a href="{{ path('app_movies_new') }}" class="btn btn-dark">Ajouter un film</a></p>
+                        <p><a href="{{ path('app_movies_index') }}" class="btn btn-dark">Voir les films</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-header">Utilisateurs <i class="fa fa-user"></i></div>
+                    <div class="card-body">
+                        <h4 class="card-title">La famille s'aggrandit ?</h4>
+                        <p class="card-text">Faites profiter des à présent de vos recommandation à une nouvelle personne.</p>
+                        <p><a href="{{ path('app_users_new') }}" class="btn btn-dark">Ajouter un utilisateur</a></p>
+                        <p><a href="{{ path('app_users_index') }}" class="btn btn-dark">Voir les utilisateurs</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-header">Recommandations <i class="fa fa-book"></i></div>
+                    <div class="card-body">
+                        <h4 class="card-title">On regarde quoi ce soir Nico ?</h4>
+                        <p class="card-text">Fini les heures de recherches infructueuses, ici, c'est Nico qui se creuse.</p>
+                        <p><a href="{{ path('app_recommandations_new') }}" class="btn btn-dark">Faire une recommandation</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

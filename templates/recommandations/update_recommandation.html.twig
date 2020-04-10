@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Mise à jour d'une recommandation</h1>
+    <p>{{ recommandation.user.name }}</p>
+    <p>{{ recommandation.movie.title }}</p>
+
+    {{ form(form) }}
+{% endblock %}
